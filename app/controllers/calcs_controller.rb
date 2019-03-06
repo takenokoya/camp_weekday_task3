@@ -7,7 +7,7 @@ class CalcsController < ApplicationController
     # コードを簡素化
     @result = case @operator  #case文を用いてparams[:operator]で受け取る値に応じた処理を@resultに代入
               when 'addition'
-                @value1 + @value2 
+                @value1 + @value2
               when 'subtraction'
                 @value1 - @value2
               when 'multiplication'
