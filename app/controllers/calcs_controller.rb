@@ -12,9 +12,16 @@ class CalcsController < ApplicationController
                 @value1 - @value2
               when 'multiplication'
                 @value1 * @value2
-              when 'division'
-                "#{@value1 / @value2}..#{@value1 % @value2}" #課題1:余りも出力するよう追加
+              when 'division'  
+                # 課題2:ZeroDivisionErrorをresqueを用いて補足し、変数eに例外オブジェクトを格納
+                # 例外が起きた場合は変数eを@resultに代入
+                begin
+                  "#{@value1 / @value2}..#{@value1 % @value2}" #課題1:余りも出力するよう追加
+                rescue ZeroDivisionError => e
+                  e  
+                end
               end
+ 
   end
 
 end
