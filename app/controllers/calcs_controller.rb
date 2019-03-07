@@ -13,7 +13,7 @@ class CalcsController < ApplicationController
               when 'multiplication'
                 @value1 * @value2
               when 'division'
-                @value1 / @value2.to_f  #浮動小数点演算に修正
+                "#{@value1 / @value2}..#{@value1 % @value2}" #課題1:余りも出力するよう追加
               end
   end
 
